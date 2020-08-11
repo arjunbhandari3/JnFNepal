@@ -1,0 +1,25 @@
+{
+  "name": "jnf_redesign",
+  "version": "1.0.0",
+  "description": "",
+  "main": "start.js",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^6.2.0",
+    "exphbs": "^1.2.0",
+    "express": "^4.16.4",
+    "express-fileupload": "^1.1.1-alpha.1",
+    "express-session": "^1.15.6",
+    "flash": "^1.1.0",
+    "jwt-then": "^1.0.1",
+    "md5": "^2.2.1",
+    "moment": "^2.23.0",
+    "mysql": "^2.16.0"
+  }
+}
