@@ -1,0 +1,59 @@
+.content {
+  text-align: left;
+}
+
+.details-section {
+  border-bottom: 1px solid #BABABA;
+  padding: 2rem 0;
+}
+
+.one .title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #191919;
+}
+
+.one .category {
+  color: #575757;
+}
+
+.one .category span {
+  font-weight: bold;
+  color: #404142;
+}
+
+.two {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 1rem;
+}
+
+.two .item {
+  text-align: left;
+}
+
+.two .item i {
+  display: inline-block;
+  color: #8AC03C;
+  width: 24px;
+  height: 24px;
+  margin-right: .2rem;
+}
+
+.two .item > div {
+  display: inline-block;
+}
+
+.two .item .title {
+  font-weight: bold;
+}
+
+.two .item .desc {
+  font-size: .9rem;
+  color: #BABABA;
+  margin-left: 1.5rem;
+  margin-top: .5rem;
+}
+/*# sourceMappingURL=job_det.css.map */

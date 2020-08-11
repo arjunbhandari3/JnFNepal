@@ -1,0 +1,113 @@
+.hero {
+  height: 400px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.6))), url("bg_par.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url("../images/bg_par.jpg");
+}
+
+.hero>div {
+  top: 225px;
+}
+
+.hero>div h1 {
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.hero>div>div {
+  font-size: .95rem;
+}
+
+.form-login-registration {
+  max-width: 400px;
+  margin: auto;
+}
+
+.form-login-registration .form-title-login,
+.form-login-registration .form-title-registration {
+  display: inline-block;
+  margin: 2rem 1rem 4rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding-bottom: .75rem;
+  border-bottom: 1px solid transparent;
+}
+
+.form-login-registration .form-title-login.active,
+.form-login-registration .form-title-registration.active {
+  border-color: black;
+}
+
+.form-login-registration .login {
+  display: block;
+}
+
+.form-login-registration .registration {
+  display: none;
+}
+
+.form-login-registration .form {
+  text-align: left;
+}
+
+.form-login-registration .form label {
+  padding: 1rem;
+}
+
+.form-login-registration .form label div {
+  padding-bottom: .5rem;
+  color: #7A7A7A;
+}
+
+.form-login-registration .form input,
+.form-login-registration .form button,
+.form-login-registration .form select {
+  padding: .75rem 1rem;
+  margin: 0;
+  width: 100%;
+  display: block;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.form-login-registration .social-sign div {
+  display: inline-block;
+}
+
+.form-login-registration .social-sign span {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: black;
+  margin: 1rem .5rem;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-items: center;
+}
+
+.form-login-registration .social-sign span i {
+  font-size: 24px;
+  padding: .5rem;
+  color: white;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.form-login-registration .social-sign .fb:hover {
+  background: #4267B2;
+}
+
+.form-login-registration .social-sign .twitter:hover {
+  background: #1DA1F2;
+}
+
+.form-login-registration .social-sign .google_plus:hover {
+  background: #DB4B40;
+}
+
+/*# sourceMappingURL=login.css.map */

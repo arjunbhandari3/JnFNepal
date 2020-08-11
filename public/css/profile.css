@@ -1,0 +1,76 @@
+.hero {
+  height: 400px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.6))), url("bg_par.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url("../images/bg_par.jpg");
+}
+
+.hero > div {
+  top: 225px;
+}
+
+.hero > div h1 {
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.hero > div > div {
+  font-size: .95rem;
+}
+
+.section.one {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2.5fr;
+      grid-template-columns: 1fr 2.5fr;
+  grid-gap: 1.5rem;
+}
+
+.section.one .left img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.section.one .left .social-btns {
+  width: 65%;
+  margin: 1rem auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(32px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(32px, 1fr));
+}
+
+.section.one .left .social-btns span {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  padding: .5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #232323;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.section.one .left div:nth-of-type(2),
+.section.one .left div:nth-of-type(3) {
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.section.one .left div:nth-of-type(2) i,
+.section.one .left div:nth-of-type(3) i {
+  margin-right: .5rem;
+}
+/*# sourceMappingURL=profile.css.map */

@@ -1,0 +1,249 @@
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 25%;
+  height: 3rem;
+  padding: .5rem 2rem;
+  background: white;
+  z-index: 2;
+  color: #333;
+  border-bottom: 1px solid #ccc;
+}
+
+.header .name {
+  line-height: 3rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: inline;
+}
+
+.header .name .toggler {
+  margin-right: .5rem;
+  display: none;
+}
+
+.header .video {
+  line-height: 3rem;
+  font-size: 1.5rem;
+  position: fixed;
+  top: .5rem;
+  right: 1rem;
+}
+
+.chatList {
+  width: 25%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-right: 1px solid #4a4a4a;
+  z-index: 5;
+  background: white;
+}
+
+.chatList .item {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+  justify-items: flex-start;
+  padding: 1rem;
+  grid-gap: .75rem;
+}
+
+.chatList .item .icon {
+  width: 84px;
+  height: 84px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.chatList .item .name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.chatList .item .text {
+  margin-top: .2rem;
+  color: #4a4a4a;
+  font-style: italic;
+  width: 100%;
+}
+
+.chatList .search {
+  padding: 0 2rem;
+  position: relative;
+}
+
+.chatList .search i {
+  position: absolute;
+  bottom: 1.7rem;
+  left: 2.0rem;
+}
+
+.chatList .search .input-search {
+  width: 100%;
+  margin: 1rem 0;
+  padding: .5rem 2rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+}
+
+.chat {
+  position: fixed;
+  bottom: 4rem;
+  right: 0;
+  top: 4rem;
+  overflow: auto;
+  width: 74%;
+  margin-left: 25%;
+}
+
+p {
+  padding: .5rem 0;
+  margin: 0;
+}
+
+.message-container .item {
+  padding: .1rem 1rem;
+  margin: .5rem;
+  border-radius: 20px;
+  display: inline-block;
+  position: relative;
+  max-width: 60%;
+}
+
+.message-container .user-image {
+  width: 32px;
+  height: 32px;
+  border: 3px solid;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.message-container .received,
+.message-container .received-again {
+  background: #ccc;
+  color: #333;
+  float: left;
+  margin-left: 48px;
+}
+
+.message-container .received .user-image,
+.message-container .received-again .user-image {
+  border-color: #8AC03C;
+  left: -2px;
+  top: .1rem;
+  -webkit-transform: translate(-100%, 0);
+          transform: translate(-100%, 0);
+}
+
+.message-container .received-again .user-image,
+.message-container .send-again .user-image {
+  visibility: hidden;
+}
+
+.message-container .send,
+.message-container .send-again {
+  background: #8AC03C;
+  color: white;
+  float: right;
+  margin-right: 48px;
+}
+
+.message-container .send .user-image,
+.message-container .send-again .user-image {
+  border-color: #333;
+  right: -2px;
+  top: .1rem;
+  -webkit-transform: translate(100%, 0);
+          transform: translate(100%, 0);
+}
+
+.message-container .clearfix {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+.interaction {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  left: calc(25% + 1rem);
+}
+
+.interaction .send-input {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: .7rem 1rem;
+  border: 2px solid #aaa;
+  border-radius: 20px;
+  outline: 0px none;
+  padding-right: 45px;
+}
+
+.interaction .send-input:focus {
+  border-color: #8AC03C;
+}
+
+.interaction img {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  right: .3rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+@media screen and (max-width: 767px) {
+  .header .name .toggler {
+    display: inline;
+  }
+  .chatList {
+    display: none;
+    width: 80%;
+  }
+  .header,
+  .chat {
+    left: 0rem;
+    margin: 0;
+    width: 100%;
+  }
+  .interaction {
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    bottom: .5rem;
+    left: .5rem;
+    right: .5rem;
+  }
+}
+/*# sourceMappingURL=chat.css.map */

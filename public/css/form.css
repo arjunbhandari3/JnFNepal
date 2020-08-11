@@ -1,0 +1,46 @@
+.form {
+  text-align: left;
+  margin: auto;
+}
+
+.fifty {
+  width: 50%;
+  text-align: left;
+  margin: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .form {
+    width: 100%;
+  }
+  .fifty {
+    width: 100%;
+  }
+}
+
+.form label {
+  padding: 1rem;
+}
+
+.form label div {
+  padding-bottom: .5rem;
+}
+
+.form input,
+.form button,
+.form select {
+  padding: .75rem 1rem;
+  margin: 0;
+  width: 100%;
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-color: #ccc;
+}
+
+.form input,
+.form select {
+  color: #7A7A7A;
+  background: white;
+}
+/*# sourceMappingURL=form.css.map */

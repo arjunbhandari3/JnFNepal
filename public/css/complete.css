@@ -1,0 +1,19 @@
+.hero {
+  height: 400px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.6))), url("bg_par.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url("../images/bg_par.jpg");
+}
+
+.hero > div {
+  top: 225px;
+}
+
+.hero > div h1 {
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.hero > div > div {
+  font-size: .95rem;
+}
+/*# sourceMappingURL=complete.css.map */
