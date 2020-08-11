@@ -1,0 +1,131 @@
+{{!< layout}}
+
+{{#extend "pageName"}}Login / Register{{/extend}}
+
+{{#extend "customCSS"}}
+    <link rel="stylesheet" href="/css/login.css">
+{{/extend}}
+
+{{#extend "customJS"}}
+    <script src="/js/login_register.js"></script>
+    {{#if register}}
+        <script>
+            document.querySelector(".form-title-login").classList.remove('active');
+            document.querySelector(".form-title-registration").classList.add('active');
+            document.querySelector(".login").style.display = "none";
+            document.querySelector(".registration").style.display = "block";
+        </script>
+    {{/if}}
+{{/extend}}
+
+{{#extend "heroTitle"}}Login or Registration{{/extend}}
+
+{{#extend "breadcrumbs"}}
+    <a href="">Home</a> / Login or Registration
+{{/extend}}
+
+{{#extend "body"}}
+    <section class="section">
+        <div class="title">Sign In</div>
+        <div class="container content">
+            <div class="form-login-registration">
+                <div class="form-title form-title-login active">LOGIN</div>
+                <div class="form-title form-title-registration">REGISTRATION</div>
+    
+    
+                <div class="login">
+                    <div class="form">
+                        <form action="/login" method="post">
+                            <label for="type">
+                                <div>Login As:</div>
+                                <select name="type" id="typelog">
+                                    <option value="unselected">- Select Type -</option>
+                                    <option value="employee">Employee</option>
+                                    <option value="company">Company</option>
+                                </select>
+                                {{#if logBody.type}}
+                                <script>
+                                    document.querySelector("#typelog").value = "{{ logBody.type }}";
+                                </script>
+                                {{/if}}
+                            </label>
+                            <label for="email">
+                                <div>Email:</div>
+                                <input type="text" id='email' name="email" value="{{#if logBody.email}}{{ logBody.email }}{{/if}}">
+                            </label>
+                            <label for="password">
+                                <div>Password:</div>
+                                <input type="password" id="password" name="password" value="{{#if logBody.password}}{{ logBody.password }}{{/if}}">
+                            </label>
+                            <button class="btn">SIGN IN</button>
+                        </form>
+                    </div>
+                    <br><br>
+                    or enter with
+                    <div class="social-sign">
+                        <div>
+                            <span class="fb"> <i class="fab fa-facebook-f"></i> </span>
+                        </div>
+                        <div>
+                            <span class="twitter"> <i class="fab fa-twitter"></i> </span>
+                        </div>
+                        <div>
+                            <span class="google_plus"> <i class="fab fa-google-plus-g"></i> </span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="registration">
+                    <div class="form">
+                        <form action="/register" method="post">
+                            <label for="type">
+                                <div>Register As:</div>
+                                <select name="type" id="type">
+                                    <option value="unselected">- Select Type -</option>
+                                    <option value="employee">Employee</option>
+                                    <option value="company">Company</option>
+                                </select>
+                                {{#if regBody.type}}
+                                    <script>
+                                        document.querySelector("#type").value = "{{ regBody.type }}";
+                                    </script>
+                                {{/if}}
+                            </label>
+                            <label for="name">
+                                <div>Name:</div>
+                                <input type="text" id='name' name="name" value="{{#if regBody.name}}{{ regBody.name }}{{/if}}">
+                            </label>
+                            <label for="email">
+                                <div>Email:</div>
+                                <input type="text" id='email' name="email" value="{{#if regBody.email}}{{ regBody.email }}{{/if}}">
+                            </label>
+                            <label for="password">
+                                <div>Password:</div>
+                                <input type="password" id="password" name="password" value="{{#if regBody.password}}{{ regBody.password }}{{/if}}">
+                            </label>
+                            <label for="confirm-password">
+                                <div>Confirm Password:</div>
+                                <input type="password" id="password2" name="password2" value="{{#if regBody.password2}}{{ regBody.password2 }}{{/if}}">
+                            </label>
+                            <button class="btn">CREATE AN ACCOUNT</button>
+                        </form>
+                    </div>
+                    <br><br>
+                    or enter with
+                    <div class="social-sign">
+                        <div>
+                            <span class="fb"> <i class="fab fa-facebook-f"></i> </span>
+                        </div>
+                        <div>
+                            <span class="twitter"> <i class="fab fa-twitter"></i> </span>
+                        </div>
+                        <div>
+                            <span class="google_plus"> <i class="fab fa-google-plus-g"></i> </span>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+{{/extend}}

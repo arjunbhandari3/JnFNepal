@@ -1,0 +1,179 @@
+{{!< layout}} 
+
+{{#extend "pageName"}}Home{{/extend}}
+
+{{#extend "hero"}}
+    <div class="hero">
+        <div>
+            <h1>Build Your Future</h1>
+            <div>We offer <span>2,989</span> job vacancies right now!</div>
+            <div class="find-job">
+                <form action="/find" method="POST">
+                    <input type="text" name="keywords" id="" placeholder="Job title, skills, or company">
+                    <select name="city">
+                        <option value="">- City -</option>
+                        {{#each cities}}
+                        <option value="{{this.name}}">{{this.name}}</option>
+                        {{/each}}
+                    </select>
+                    <button class="btn find-a-job" type="submit">FIND JOB</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{{/extend}}
+
+{{#extend "body"}}
+    <section class="categories">
+        <div class="category" onclick="location.href='/jobs/category/Healthcare'">
+            <div>
+                <i class="fas fa-plus-square"></i>
+                <div>Healthcare</div>
+            </div>
+        </div>
+        <div class="category" onclick="location.href='/jobs/category/Automobile Jobs'">
+            <div>
+                <i class="fas fa-car-alt"></i>
+                <div>Automobile Jobs</div>
+            </div>
+        </div>
+        <div class="category" onclick="location.href='/jobs/category/Construction'">
+            <div>
+                <i class="far fa-building"></i>
+                <div>Construction</div>
+            </div>
+        </div>
+        <div class="category" onclick="location.href='/jobs/category/Food Service'">
+            <div>
+                <i class="fas fa-utensils"></i>
+                <div>Food Service</div>
+            </div>
+        </div>
+        <div class="category" onclick="location.href='/jobs/category/Computer & IT'">
+            <div>
+                <i class="fas fa-laptop"></i>
+                <div>Computer &amp; IT</div>
+            </div>
+        </div>
+        <div class="category" onclick="location.href='/jobs/category/Finance'">
+            <div>
+                <i class="fas fa-chart-pie"></i>
+                <div>Finance</div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section latest-jobs">
+        <div class="title">Latest Jobs</div>
+        <div class="content container table-wrapper">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Company</th>
+                        <th>Job Vacancy</th>
+                        <th>City</th>
+                        <th>Salary</th>
+                        <th>Employment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>11.05.2018, 4:16pm</td>
+                        <td><a href="your-career-starts-here.html"><img class="img-semi-transparent-inverse" src="/images/images/partner-01-45x40.png"
+                                    alt="" width="45" height="40"></a></td>
+                        <td class="font-weight-bold text-primary p"><a href="project-managers.html">Developer</a></td>
+                        <td>New York</td>
+                        <td>$6000</td>
+                        <td>Full time</td>
+                    </tr>
+                    <tr>
+                        <td>06.02.2018, 2:54pm</td>
+                        <td><a href="your-career-starts-here.html"><img class="img-semi-transparent-inverse" src="/images/images/partner-02-50x40.png"
+                                    alt="" width="50" height="40"></a></td>
+                        <td class="font-weight-bold text-primary p"><a href="project-managers.html">Project
+                                Manager</a></td>
+                        <td>San Diego</td>
+                        <td>$4000</td>
+                        <td>Full time</td>
+                    </tr>
+                    <tr>
+                        <td>18.01.2018, 2:42pm</td>
+                        <td><a href="your-career-starts-here.html"><img class="img-semi-transparent-inverse" src="/images/images/partner-03-40x40.png"
+                                    alt="" width="40" height="40"></a></td>
+                        <td class="font-weight-bold text-primary p"><a href="project-managers.html">Truck Driver</a></td>
+                        <td>Dallas</td>
+                        <td>$2000</td>
+                        <td>Part time</td>
+                    </tr>
+                    <tr>
+                        <td>13.04.2018, 2:54pm</td>
+                        <td><a href="your-career-starts-here.html"><img class="img-semi-transparent-inverse" src="/images/images/partner-04-76x40.png"
+                                    alt="" width="76" height="40"></a></td>
+                        <td class="font-weight-bold text-primary p"><a href="project-managers.html">JS Programmer</a></td>
+                        <td>Seattle</td>
+                        <td>$7000</td>
+                        <td>Full time</td>
+                    </tr>
+                    <tr>
+                        <td>18.05.2018, 4:32pm</td>
+                        <td><a href="your-career-starts-here.html"><img class="img-semi-transparent-inverse" src="/images/images/partner-01-45x40.png"
+                                    alt="" width="45" height="40"></a></td>
+                        <td class="font-weight-bold text-primary p"><a href="project-managers.html">Developer</a></td>
+                        <td>San Francisco</td>
+                        <td>$5000</td>
+                        <td>Part time</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <a href="" class="btn">VIEW ALL</a>
+        </div>
+    </section>
+    
+    
+    <section class="why">
+        <div class="section container">
+            <div class="title">Why People Choose Us</div>
+            <div class="content why grid">
+                <div class="items">
+                    <div class='title-head'><i class="fas fa-user-check"></i>
+                        <div class="title">VERIFIED EMPLOYERS</div>
+                    </div>
+                    <div class="description">Lorem Lorem ipsum dolor sit amet. ipsum dolor sit amet consectetur
+                        adipisicing elit. Odio eos quis veniam quibusdam ipsam asperiores?</div>
+                </div>
+                <div class="items">
+                    <div class='title-head'><i class="fas fa-chart-line"></i>
+                        <div class="title">DEMANDED VACANCIES</div>
+                    </div>
+                    <div class="description">Lorem ipsum Lorem ipsum dolor sit amet. dolor sit amet consectetur
+                        adipisicing elit. Odio eos quis asperiores?</div>
+                </div>
+                <div class="items">
+                    <div class='title-head'><i class="far fa-id-card"></i>
+                        <div class="title">EMPLOYMENT BLOG</div>
+                    </div>
+                    <div class="description">Lorem ipsum Lorem ipsum dolor sit amet. dolor sit amet consectetur
+                        adipisicing elit. Odio eos quis veniam quibus asperiores?</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="parallax-wrapper">
+        <div class="parallax"></div>
+    
+        <div class="build-carrer-wrapper">
+            <section class="build-carrer container">
+                <span>Start Building Your Own Career Now</span>
+                <div>
+                    <a class="btn">GET STARTED</a>
+                </div>
+            </section>
+        </div>
+    
+        <div class="parallax"></div>
+    </div>
+{{/extend}}

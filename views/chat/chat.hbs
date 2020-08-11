@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat - JnFNepal</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Product+Sans">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/chat.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <div class="header">
+
+        <div class="name">
+            <i class="fas fa-bars toggler" onclick="toggleList()"></i>
+            {{ name }}
+        </div>
+        <div class="video"><i class="fas fa-video"></i></div>
+    </div>
+
+    <div class="content">
+        <div class="chatList" id="chatList">
+            
+        </div>
+        <div class="chat">
+            <section class="message-container" id="msgs">
+                
+            </section>
+
+            <div class="interaction">
+                <form action="" method="post" onsubmit="sendMessage();return false;">
+                <input type="text" name="" id="msg" class="send-input">
+                </form>
+                <img src="/images/send.png" alt="" onclick="sendMessage();">
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" onclick="toggleList()"></div>
+
+    <script>
+        var last_sender_type = "";
+        var myType = "{{ type }}";
+
+        function toggleList() {
+            $('.chatList').toggle('slide');
+            $('.overlay').fadeToggle();
+        }
+
+        function meSender(type) {
+            if (myType == type) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function autoScroll() {
+            $('.chat').animate({
+                scrollTop: $('.chat').get(0).scrollHeight
+            }, 500);
+        }
+
+        function sendMessage(){
+            $.ajax({
+                url: './send',
+                method: 'post',
+                data: {
+                    message: $("#msg").val()
+                },
+                success: function(data){
+                    getOldMessages();
+                    getChatList();
+                }, error: function(){
+
+                }
+            })
+
+            $("#msg").val('');
+        }
+
+        function appendMessage(data) {
+            var cls = "";
+
+            var pic = "";
+
+            if (meSender(data.sender)) {
+                cls = "send";
+                if (myType == "employee") {
+                    pic = data.picture;
+                } else {
+                    pic = data.logo;
+                }
+            } else {
+                cls = "received";
+                if (data.sender == "employee") {
+                    pic = data.picture;
+                } else {
+                    pic = data.logo;
+                }
+            }
+
+            if (last_sender_type == data.sender) {
+                cls = cls + "-again";
+            }
+
+            last_sender_type = data.sender;
+
+            $("#msgs").append(`<div>
+            <div class="${cls} item">
+                <p class="message">${data.message}</p>
+                <img src="${pic}" alt="" class="user-image">
+            </div>
+            <div class="clearfix"></div>
+        </div>`);
+
+        }
+
+        function getOldMessages() {
+            $.ajax({
+                url: "oldMessages",
+                method: "GET",
+                success: function (data) {
+                    $("#msgs").html('');
+                    data.forEach(msg => {
+                        appendMessage(msg);
+                    })
+                    autoScroll();
+                }
+            })
+        }
+
+        function getChatList(){
+            $.ajax({
+                url: "/messageList",
+                method: "GET",
+                success: function (data) {
+                    $("#chatList").html(data);
+                }
+            })
+        }
+
+        getOldMessages();
+        getChatList();
+
+        setInterval(getOldMessages, 8000);
+        setInterval(getChatList, 8000);
+    </script>
+
+</body>
+
+</html>

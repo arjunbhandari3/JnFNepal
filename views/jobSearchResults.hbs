@@ -1,0 +1,24 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Company</th>
+            <th>Job Vacancy</th>
+            <th>City</th>
+            <th>Salary</th>
+            <th>Employment</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each jobs}}
+        <tr>
+            <td>{{{ this.posted_on }}}</td>
+            <td>{{{ this.name }}}</td>
+            <td class="font-weight-bold text-primary p"><a href="/jobs/view/{{ this.id }}">{{{ this.title }}}</a></td>
+            <td>{{ this.city }}</td>
+            <td>{{ this.salary }}</td>
+            <td>{{ this.type }}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

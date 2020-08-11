@@ -1,0 +1,126 @@
+{{!< layout}} 
+
+{{#extend "pageName"}}Post a Job{{/extend}}
+
+{{#extend "customCSS"}} 
+<link rel="stylesheet" href="/css/form.css">
+<link rel="stylesheet" href="/css/postjob.css">
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+{{/extend}}
+
+{{#extend "customJS"}}
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script>
+    var quill = new Quill('#editor', {
+        theme: 'snow'
+    });
+
+    function preSubmit(){
+        document.getElementById("description").value = document.getElementById("editor").firstChild.innerHTML;
+    }
+</script>
+{{/extend}}
+
+{{#extend "heroTitle"}}Post a Job{{/extend}}
+
+{{#extend "breadcrumbs"}}
+<a href="">Home</a> / Post a Job
+{{/extend}}
+
+{{#extend "body"}}
+<section class="section">
+    <div class="title">Post Job</div>
+    <div class="container content">
+        <div class="">
+
+            <form class="form" method="POST" action="" id="myForm" onsubmit="preSubmit();">
+                <div class="post-job-grid">
+                    <label for="title">
+                        <div>Job Title:</div>
+                        <input type="text" id="title" name="title">
+                    </label>
+
+                    <label for="no_of_vacancies">
+                        <div>No of Vacancies:</div>
+                        <input type="text" id="no_of_vacancies" placeholder="1 / 2 / 10" name="no_of_vacancies">
+                    </label>
+
+                    <label for="location">
+                        <div>Location (optional):</div>
+                        <select id="location" name="city">
+                            <option value="">- Location -</option>
+                            {{#each cities}}
+                            <option value="{{ this.name }}">{{ this.name }}</option>
+                            {{/each}}
+                        </select>
+                    </label>
+
+                    <label for="category">
+                        <div>Category:</div>
+                        <select id="category" name="category">
+                            <option value="">- Category -</option>
+                            {{#each categories}}
+                            <option value="{{ this.name }}">{{{ this.name }}}</option>
+                            {{/each}}
+                        </select>
+                    </label>
+
+                    <label for="type">
+                        <div>Job Type:</div>
+                        <select id="type" name="type">
+                            <option value="">- Job Type -</option>
+                            {{#each h.jobTypes}}
+                            <option value="{{this}}">{{this}}</option>
+                            {{/each}}
+                        </select>
+                    </label>
+
+                    <label for="tags">
+                        <div>Job Tags:</div>
+                        <input type="text" id="tags" placeholder="hello, there, who, is, there" name="keywords">
+                    </label>
+
+                    <label for="editor" class="col-2 edit">
+                        <div id="editor" style="min-height: 10rem;">
+                            <h1>
+                                Write Job Description Here !!
+                            </h1>
+                        </div>
+                    </label>
+
+                    <input type="hidden" name="description" id="description">
+
+                    <label for="email">
+                        <div>Contact Email:</div>
+                        <input type="text" id="email" name="contact_email">
+                    </label>
+
+                    <label for="salary">
+                        <div>Salary:</div>
+                        <input type="text" id="salary" placeholder="10000 / Negotiable" name="salary">
+                    </label>
+
+                    <label for="expiry_date">
+                        <div>Expires In:</div>
+                        <select name="expiry_date">
+                            <option value="7">7 Days</option>
+                            <option value="1">1 Day</option>
+                            <option value="3">3 Days</option>
+                            <option value="15">15 Days</option>
+                            <option value="30">1 Month</option>
+                        </select>
+                    </label>
+                    
+                    <label>                    
+                        <button class="btn" style="width: 100%; margin: 2rem auto 0;">Post a Job</button>
+                    </label>
+
+
+                </div>
+                
+            </form>
+
+        </div>
+    </div>
+</section>
+{{/extend}}

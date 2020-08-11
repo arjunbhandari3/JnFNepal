@@ -1,0 +1,110 @@
+{{!< layout}}
+
+{{#extend "pageName"}}Find Jobs{{/extend}}
+
+{{#extend "customCSS"}}
+    <link rel="stylesheet" href="/css/find.css">
+{{/extend}}
+
+{{#extend "customJS"}}
+    {{#if keywords}}
+    <script>
+        document.getElementById("keywords").value = '{{keywords}}';
+    </script>
+    {{/if}}
+    {{#if category}}
+        <script>
+            document.getElementById("category").value = '{{category}}';
+        </script>
+    {{/if}}
+    {{#if city}}
+        <script>
+            document.getElementById("city").value = '{{city}}';
+        </script>
+    {{/if}}
+    <script>
+        function initiateSearch(){
+            var keywords = document.getElementById("keywords").value;
+            var category = document.getElementById("category").value;
+            var city = document.getElementById("city").value;
+            var types = "";
+            var elems = document.querySelectorAll(".types input:checked");
+            for (var i = 0; i < elems.length;i++){
+                types += '(' + elems[i].value + ')';
+            }
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/jobs/search');
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    document.getElementById("resultData").innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send(JSON.stringify({
+                keywords: keywords,
+                city: city,
+                category: category,
+                types: types
+            }));
+        }
+
+        initiateSearch();
+    </script>
+{{/extend}}
+
+{{#extend "heroTitle"}}Find a Job{{/extend}}
+
+{{#extend "breadcrumbs"}}
+    <a href="">Home</a> / Find a Job
+{{/extend}}
+
+{{#extend "body"}}
+    <section class="search-section">
+        <div class="container">
+            <div class="form">
+                <div>
+                    <input type="text" placeholder="Keywords" id="keywords">
+                    <select name="" id="city">
+                        <option value="any">Any Location</option>
+                        {{#each cities}}
+                        <option value="{{this.name}}">{{{this.name}}}</option>
+                        {{/each}}
+                    </select>
+                    <select name="" id="category">
+                        <option value="any">Any Category</option>
+                        {{#each categories}}
+                        <option value="{{this.name}}">{{{this.name}}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+
+                <div class="options">
+                    <span class="types">
+                        <input type="checkbox" name="" value="Freelance">Freelance
+                    </span>
+                    <span class="types">
+                        <input type="checkbox" name="" value="Full Time">Full Time
+                    </span>
+                    <span class="types">
+                        <input type="checkbox" name="" value="Internship">Internship
+                    </span>
+                    <span class="types">
+                        <input type="checkbox" name="" value="Part Time">Part Time
+                    </span>
+                    <span class="types">
+                        <input type="checkbox" name="" value="Temporary">Temporary
+                    </span>
+                </div>
+            </div>
+            <a href="" class="btn btn-secondary" onclick="initiateSearch();return false;">FIND JOB</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="content container table-wrapper" id="resultData">
+            
+        </div>
+    </section>
+{{/extend}}
+

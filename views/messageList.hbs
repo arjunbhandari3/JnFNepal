@@ -1,0 +1,13 @@
+<div class="search">
+    <i class="fas fa-search"></i>
+    <input type="text" placeholder="Search" class="input-search">
+</div>
+{{#each messages}}
+<div class="item" onclick="location.href='/chat/{{ this.employee_id }}/{{ this.company_id }}/page'">
+    <img src="{{this.picture}}" alt="" class="icon">
+    <div>
+        <div class="name">{{this.full_name}}</div>
+        <div class="text text-truncate">{{ this.message }}</div>
+    </div>
+</div>
+{{/each}}

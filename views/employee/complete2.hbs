@@ -1,0 +1,28 @@
+{{!< layout}} {{#extend "pageName"}} Complete Profile{{/extend}} {{#extend "customCSS"}} <link rel="stylesheet" href="/css/complete.css">
+    <link rel="stylesheet" href="/css/form.css">
+    {{/extend}}
+
+    {{#extend "heroTitle"}}Complete Profile{{/extend}}
+
+    {{#extend "breadcrumbs"}}
+    <a href="">Home</a> / Complete Profile
+    {{/extend}}
+
+    {{#extend "body"}}
+    <section class="section">
+        <div class="title">Resume Upload</div>
+        <div class="container content">
+            <div class="">
+
+                <form class="fifty form" action="" method="post" enctype="multipart/form-data">
+                    <label for="resume">
+                        <div>Pick your resume (PDF):</div>
+                        <input type="file" name="myFile" style="border: none; padding: 0;">
+                    </label>
+                    <button class="btn">Proceed to Next Step</button>
+                </form>
+
+            </div>
+        </div>
+    </section>
+    {{/extend}}

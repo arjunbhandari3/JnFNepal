@@ -1,0 +1,33 @@
+{{!< layout}} 
+{{#extend "pageName"}}Profile{{/extend}} 
+{{#extend "customCSS"}} 
+    <link rel="stylesheet" href="/css/complete.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/profile.css">
+{{/extend}}
+
+{{#extend "heroTitle"}}Profile Page{{/extend}}
+
+{{#extend "breadcrumbs"}}
+<a href="">Home</a> / Profile Page
+{{/extend}}
+
+{{#extend "body"}}
+<section class="section one container">
+    <div class="left">
+        <img src="{{ employee.picture }}" alt="">
+        <a href="" class="btn">Send Message</a>
+        <div class="social-btns">
+            <span><i class="fab fa-facebook-f"></i></span>
+            <span><i class="fab fa-twitter"></i></span>
+            <span><i class="fab fa-google-plus-g"></i></span>
+            <span><i class="fab fa-linkedin-in"></i></span>
+        </div>
+        {{!-- <div><i class="fas fa-phone"></i>+977-9812334618</div>
+        <div><i class="fas fa-envelope"></i>uj.virtualco.org</div> --}}
+    </div>
+    <div class="right">
+        <div class="name">{{ employee.full_name }}</div>
+    </div>
+</section>
+{{/extend}}

@@ -1,0 +1,12 @@
+<script>
+    {{#each flash}}
+        swal({
+            type: '{{this.type}}',
+            title: '{{this.message}}',
+            toast: true,
+            position: 'bottom-start',
+            showConfirmButton: false,
+            timer: 8000
+        });
+    {{/each}}
+</script>

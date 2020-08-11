@@ -1,0 +1,15 @@
+<div>
+    {{#if employee}}
+        {{#each h.employeeNav}}
+        <div onclick="location.href='{{this.link}}'">{{this.name}}</div>
+        {{/each}}
+    {{else if company}}
+        {{#each h.companyNav}}
+        <div onclick="location.href='{{this.link}}'">{{this.name}}</div>
+        {{/each}}
+    {{else}}
+        {{#each h.nav}}
+        <div onclick="location.href='{{this.link}}'">{{this.name}}</div>
+        {{/each}}
+    {{/if}}
+</div>

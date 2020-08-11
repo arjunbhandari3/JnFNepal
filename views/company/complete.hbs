@@ -1,0 +1,50 @@
+{{!< layout}} 
+{{#extend "pageName"}} Complete Profile{{/extend}} 
+{{#extend "customCSS"}} 
+    <link rel="stylesheet" href="/css/complete.css">
+    <link rel="stylesheet" href="/css/form.css">
+{{/extend}}
+
+{{#extend "heroTitle"}}Complete Profile{{/extend}}
+
+{{#extend "breadcrumbs"}}
+<a href="">Home</a> / Complete Profile
+{{/extend}}
+
+{{#extend "body"}}
+<section class="section">
+    <div class="title">Complete Profile</div>
+    <div class="container content">
+        <div class="">
+
+            <form class="fifty form" method="post" action="">
+
+                <label for="city">
+                    <div>City:</div>
+                    <select id="city" name="city">
+                        <option value="">- City -</option>
+                        {{#each cities}}
+                        <option value="{{ this.name }}">{{ this.name }}</option>
+                        {{/each}}
+                    </select>
+                </label>
+                <label for="phone_number">
+                    <div>Phone Number:</div>
+                    <input type="text" id="phone_number" placeholder="" name="phone_number">
+                </label>
+                <label for="website">
+                    <div>Website:</div>
+                    <input type="text" id="website" placeholder="" name="website">
+                </label>
+                <label for="logo">
+                    <div>Logo URL:</div>
+                    <input type="text" id="logo" placeholder="" name="logo">
+                </label>
+                <button class="btn">Complete Profile</button>
+
+            </form>
+
+        </div>
+    </div>
+</section>
+{{/extend}}

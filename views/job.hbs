@@ -1,0 +1,91 @@
+{{!< layout}} {{#extend "pageName"}} Job Details{{/extend}}
+
+{{#extend "customCSS"}} 
+    <link rel="stylesheet" href="/css/complete.css">
+    <link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="/css/job_det.css">
+{{/extend}}
+
+{{#extend "heroTitle"}}Job Details{{/extend}}
+
+{{#extend "breadcrumbs"}}
+<a href="">Home</a> / Job Details
+{{/extend}}
+
+{{#extend "body"}}
+<section class="section">
+    <div class="title">Job Details</div>
+    <div class="container content">
+        <div class="details-section one">
+            <div class="title">{{ job.title }}</div>
+            <div class="category"><span>Job Category: </span> {{{ job.category }}}</div>
+        </div>
+        <div class="details-section two">
+            <div class="item">
+                <div>
+                    <div class="title"><i class="far fa-calendar"></i>Date Posted:</div>
+                    <div class="desc">Posted {{{ job.posted_on }}}</div>
+                </div>
+            </div>
+            <div class="item">
+                <div>
+                    <div class="title"><i class="far fa-clock"></i>Employment Time:</div>
+                    <div class="desc">{{{ job.type }}}</div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div>
+                    <div class="title"><i class="fa fa-link"></i>Website:</div>
+                    <div class="desc"><a href="">{{{ job.website }}}</a></div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div>
+                    <div class="title"><i class="far fa-envelope"></i>Contact email:</div>
+                    <div class="desc">{{{ job.contact_email }}}</div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div>
+                    <div class="title"><i class="fas fa-map-marker-alt"></i>Location:</div>
+                    <div class="desc">{{{ job.city }}}</div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div>
+                    <div class="title"><i class="fas fa-money-check-alt"></i>Salary:</div>
+                    <div class="desc">Rs. {{{ job.salary }}}</div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div>
+                    <div class="title"><i class="fas fa-phone"></i>Phone:</div>
+                    <div class="desc">{{{ job.phone_number }}}</div>
+                </div>
+            </div>
+
+
+            <div class="item">
+                <div>
+                    <div class="title"><i class="fas fa-search-dollar"></i>Vacancies:</div>
+                    <div class="desc">{{{ job.no_of_vacancies }}}</div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="details-section three" style="margin-bottom: 2rem;">
+            <div style="font-weight: bold; font-size: 1.5rem; margin: 1rem 0;">Description:</div>
+            <div>
+                {{{ job.description }}}
+            </div>
+        </div>
+        <a href="" class="btn btn-primary">APPLY FOR A JOB</a>
+    </div>
+</section>
+{{/extend}}
